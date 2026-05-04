@@ -15,6 +15,7 @@ export interface IOrder extends Document {
   referenceLinks?: string[];
   status: "pending" | "reviewed" | "in-progress" | "completed" | "cancelled";
   priority: "normal" | "urgent" | "critical";
+  ipAddress?: string;
   createdAt: Date;
   updatedAt: Date;
 }
