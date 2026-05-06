@@ -13,13 +13,6 @@ const projects = [
     status: "Live",
   },
   {
-    id: "ncplay", title: "NCplay", category: "Admin Dashboard System", icon: LayoutDashboard, accentColor: "#7b5ea7",
-    description: "A comprehensive multi-tenant admin dashboard suite with role-based access control, real-time analytics panels, and automated reporting pipelines.",
-    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Chart.js", "Redis"],
-    highlights: ["Multi-tenant RBAC architecture", "Real-time analytics with WebSockets", "Automated PDF report generation", "Audit trail & activity logging"],
-    status: "Live",
-  },
-  {
     id: "tadexpress", title: "TadExpress", category: "Logistics Backend", icon: Truck, accentColor: "#00ff88",
     description: "A high-throughput logistics backend powering order tracking, driver dispatch, route optimization, and automated delivery notifications.",
     stack: ["Node.js", "Express", "MongoDB", "Google Maps API", "Bull Queue", "Twilio"],

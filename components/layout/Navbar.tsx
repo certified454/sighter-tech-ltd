@@ -20,15 +20,22 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  const isHome = pathname === "/";
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    // Check initial scroll position on mount
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  // On non-home pages, always show the glass background
+  const showBackground = !isHome || scrolled;
 
   return (
     <motion.header
@@ -37,7 +44,9 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "glass border-b border-[rgba(45,49,68,0.5)] shadow-glow-sm" : "bg-transparent"
+        showBackground
+          ? "glass border-b border-[rgba(45,49,68,0.5)] shadow-glow-sm"
+          : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
