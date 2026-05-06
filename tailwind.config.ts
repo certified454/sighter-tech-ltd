@@ -6,6 +6,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -35,14 +36,6 @@ const config: Config = {
           purple: "#7b5ea7",
           green: "#00ff88",
         },
-        slate: {
-          50: "#f0f4ff",
-          100: "#e1e8ff",
-          200: "#c3d1ff",
-          300: "#a0b3e8",
-          400: "#7a90cc",
-          500: "#5a6eaa",
-        },
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
@@ -66,22 +59,16 @@ const config: Config = {
         "glow-md": "0 0 30px rgba(0,168,255,0.3)",
         "glow-lg": "0 0 60px rgba(0,168,255,0.2)",
         "glow-card": "0 0 40px rgba(0,168,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05)",
-        "inner-glow": "inset 0 1px 0 rgba(0,168,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.5)",
       },
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "float": "float 6s ease-in-out infinite",
-        "scan": "scan 3s linear infinite",
         "border-glow": "borderGlow 2s ease-in-out infinite alternate",
       },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
-        },
-        scan: {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(100vh)" },
         },
         borderGlow: {
           "0%": { borderColor: "rgba(0,168,255,0.3)" },

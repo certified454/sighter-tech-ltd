@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Zap, MapPin, Phone, Mail, Github, Twitter, Linkedin } from "lucide-react";
+import { Zap, MapPin, Phone, Mail } from "lucide-react";
 
 const services = [
   { label: "Web Applications", href: "/services#web" },
@@ -15,51 +15,125 @@ const company = [
   { label: "Contact", href: "#contact" },
 ];
 
+const socials = [
+  {
+    label: "GitHub",
+    href: "https://github.com/sightertech",
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Twitter",
+    href: "https://twitter.com/sightertech",
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/sightertech",
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+];
+
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative border-t border-charcoal-700/50 bg-obsidian-900/50">
-      <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-electric-blue/50 to-transparent" />
+    <footer className="relative border-t border-[rgba(45,49,68,0.5)]" style={{ background: "rgba(10,11,15,0.5)" }}>
+      <div className="absolute top-0 left-1/4 right-1/4 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(0,168,255,0.5), transparent)" }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6 w-fit">
               <div className="relative w-8 h-8 flex items-center justify-center">
-                <div className="absolute inset-0 bg-electric-blue/20 rounded-lg" />
-                <Zap className="w-5 h-5 text-electric-blue relative z-10" strokeWidth={2.5} />
+                <div className="absolute inset-0 bg-[rgba(0,168,255,0.2)] rounded-lg" />
+                <Zap className="w-5 h-5 text-[#00a8ff] relative z-10" strokeWidth={2.5} />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-display font-bold text-lg text-slate-50 tracking-tight">SIGHTER</span>
-                <span className="font-mono text-[10px] text-electric-blue tracking-[0.2em] uppercase">Tech LTD</span>
+                <span className="font-display font-bold text-lg text-[#f0f4ff] tracking-tight">SIGHTER</span>
+                <span className="font-mono text-[10px] text-[#00a8ff] tracking-[0.2em] uppercase">Tech LTD</span>
               </div>
             </Link>
-            <p className="font-body text-slate-400 text-sm leading-relaxed max-w-sm mb-6">Premium software development agency from Edo State, Nigeria. Building Full-Stack applications, Mobile experiences, and AI-driven systems that scale.</p>
+            <p className="font-body text-[#7a90cc] text-sm leading-relaxed max-w-sm mb-6">
+              Premium software development agency from Edo State, Nigeria. Building Full-Stack
+              applications, Mobile experiences, and AI-driven systems that scale.
+            </p>
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm text-slate-500"><MapPin className="w-4 h-4 text-electric-blue flex-shrink-0" /><span>Edo State, Nigeria</span></div>
-              <div className="flex items-center gap-2 text-sm text-slate-500"><Phone className="w-4 h-4 text-electric-blue flex-shrink-0" /><a href="tel:+2349163301828" className="hover:text-electric-blue transition-colors">+234 916 330 1828</a></div>
-              <div className="flex items-center gap-2 text-sm text-slate-500"><Mail className="w-4 h-4 text-electric-blue flex-shrink-0" /><a href="mailto:hello@sightertech.com" className="hover:text-electric-blue transition-colors">hello@sightertech.com</a></div>
+              <div className="flex items-center gap-2 text-sm text-[#5a6eaa]">
+                <MapPin className="w-4 h-4 text-[#00a8ff] flex-shrink-0" />
+                <span>Edo State, Nigeria</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[#5a6eaa]">
+                <Phone className="w-4 h-4 text-[#00a8ff] flex-shrink-0" />
+                <a href="tel:+2349163301828" className="hover:text-[#00a8ff] transition-colors">
+                  +234 916 330 1828
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[#5a6eaa]">
+                <Mail className="w-4 h-4 text-[#00a8ff] flex-shrink-0" />
+                <a href="mailto:hello@sightertech.com" className="hover:text-[#00a8ff] transition-colors">
+                  hello@sightertech.com
+                </a>
+              </div>
             </div>
           </div>
+
           <div>
-            <h3 className="font-mono text-xs text-electric-blue uppercase tracking-widest mb-5">Services</h3>
-            <ul className="space-y-3">{services.map((s) => (<li key={s.href}><Link href={s.href} className="font-body text-sm text-slate-400 hover:text-slate-100 transition-colors">{s.label}</Link></li>))}</ul>
+            <h3 className="font-mono text-xs text-[#00a8ff] uppercase tracking-widest mb-5">Services</h3>
+            <ul className="space-y-3">
+              {services.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="font-body text-sm text-[#7a90cc] hover:text-[#f0f4ff] transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+
           <div>
-            <h3 className="font-mono text-xs text-electric-blue uppercase tracking-widest mb-5">Company</h3>
-            <ul className="space-y-3">{company.map((c) => (<li key={c.href}><Link href={c.href} className="font-body text-sm text-slate-400 hover:text-slate-100 transition-colors">{c.label}</Link></li>))}</ul>
+            <h3 className="font-mono text-xs text-[#00a8ff] uppercase tracking-widest mb-5">Company</h3>
+            <ul className="space-y-3">
+              {company.map((c) => (
+                <li key={c.href}>
+                  <Link href={c.href} className="font-body text-sm text-[#7a90cc] hover:text-[#f0f4ff] transition-colors">
+                    {c.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <div className="mt-8">
-              <h3 className="font-mono text-xs text-electric-blue uppercase tracking-widest mb-4">Follow</h3>
+              <h3 className="font-mono text-xs text-[#00a8ff] uppercase tracking-widest mb-4">Follow</h3>
               <div className="flex items-center gap-3">
-                {[{ icon: Github, href: "https://github.com/sightertech", label: "GitHub" }, { icon: Twitter, href: "https://twitter.com/sightertech", label: "Twitter" }, { icon: Linkedin, href: "https://linkedin.com/company/sightertech", label: "LinkedIn" }].map(({ icon: Icon, href, label }) => (
-                  <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-8 h-8 flex items-center justify-center rounded-lg bg-charcoal-800 border border-charcoal-700 text-slate-400 hover:text-electric-blue hover:border-electric-blue/40 transition-all duration-200"><Icon className="w-4 h-4" /></a>
+                {socials.map(({ label, href, svg }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#252836] border border-[#2d3144] text-[#7a90cc] hover:text-[#00a8ff] hover:border-[rgba(0,168,255,0.4)] transition-all duration-200"
+                  >
+                    {svg}
+                  </a>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-charcoal-700/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-mono text-xs text-slate-600">© {year} Sighter Tech LTD. All rights reserved.</p>
-          <p className="font-mono text-xs text-slate-600">Built with Next.js · Powered by caffeine ☕</p>
+
+        <div className="mt-12 pt-6 border-t border-[rgba(45,49,68,0.5)] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="font-mono text-xs text-[#363b52]">© {year} Sighter Tech LTD. All rights reserved.</p>
+          <p className="font-mono text-xs text-[#363b52]">Built with Next.js · Powered by caffeine ☕</p>
         </div>
       </div>
     </footer>

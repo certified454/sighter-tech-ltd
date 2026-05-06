@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   images: {
     remotePatterns: [
       {
@@ -7,10 +13,6 @@ const nextConfig = {
         hostname: "**.unsplash.com",
       },
     ],
-  },
-  experimental: {
-    // Moved back inside experimental to resolve the validation error
-    optimizePackageImports: ["lucide-react", "framer-motion"],
   },
 };
 

@@ -3,56 +3,159 @@
 @tailwind utilities;
 
 @layer base {
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { @apply bg-obsidian-950 text-slate-100; }
-  ::selection { background: rgba(0,168,255,0.3); color: #fff; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #060608; }
-  ::-webkit-scrollbar-thumb { background: rgba(0,168,255,0.3); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(0,168,255,0.6); }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #060608;
+    color: #e1e8ff;
+  }
+  ::selection {
+    background: rgba(0, 168, 255, 0.3);
+    color: #fff;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #060608;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 168, 255, 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 168, 255, 0.6);
+  }
 }
 
 @layer components {
   .glow-card {
-    @apply relative bg-obsidian-800 border border-charcoal-700 rounded-2xl;
-    box-shadow: 0 0 40px rgba(0,168,255,0.05), inset 0 1px 0 rgba(255,255,255,0.04);
+    position: relative;
+    background-color: #0f1117;
+    border: 1px solid #2d3144;
+    border-radius: 1rem;
+    box-shadow: 0 0 40px rgba(0, 168, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.04);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .glow-card:hover {
-    border-color: rgba(0,168,255,0.3);
-    box-shadow: 0 0 60px rgba(0,168,255,0.12), inset 0 1px 0 rgba(255,255,255,0.06);
+    border-color: rgba(0, 168, 255, 0.3);
+    box-shadow: 0 0 60px rgba(0, 168, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
+
   .btn-electric {
-    @apply relative inline-flex items-center gap-2 px-6 py-3 font-display font-semibold text-sm uppercase tracking-widest;
-    @apply bg-electric-blue text-obsidian-950 rounded-lg transition-all duration-200;
-    box-shadow: 0 0 20px rgba(0,168,255,0.4);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: #00a8ff;
+    color: #060608;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+    text-decoration: none;
   }
-  .btn-electric:hover { box-shadow: 0 0 40px rgba(0,168,255,0.7); transform: translateY(-1px); }
+  .btn-electric:hover {
+    box-shadow: 0 0 40px rgba(0, 168, 255, 0.7);
+    transform: translateY(-1px);
+  }
+
   .btn-ghost {
-    @apply relative inline-flex items-center gap-2 px-6 py-3 font-display font-semibold text-sm uppercase tracking-widest;
-    @apply border border-charcoal-600 text-slate-200 rounded-lg transition-all duration-200;
-    @apply hover:border-electric-blue hover:text-electric-blue;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-display), sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid #363b52;
+    color: #c3d1ff;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
   }
-  .section-label { @apply font-mono text-xs text-electric-blue uppercase tracking-[0.3em] mb-4; }
-  .section-heading { @apply font-display font-bold text-4xl md:text-5xl lg:text-6xl text-slate-50 leading-tight; }
+  .btn-ghost:hover {
+    border-color: #00a8ff;
+    color: #00a8ff;
+  }
+
+  .section-label {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    color: #00a8ff;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .section-heading {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    color: #f0f4ff;
+    line-height: 1.1;
+  }
+
   .gradient-text {
-    @apply bg-clip-text text-transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
     background-image: linear-gradient(135deg, #00a8ff 0%, #00e5ff 50%, #7b5ea7 100%);
   }
+
   .form-input {
-    @apply w-full bg-obsidian-800 border border-charcoal-700 rounded-lg px-4 py-3;
-    @apply text-slate-100 placeholder-slate-400 text-sm;
-    @apply focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue/30;
-    @apply transition-all duration-200;
+    width: 100%;
+    background-color: #0f1117;
+    border: 1px solid #2d3144;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #e1e8ff;
+    font-size: 0.875rem;
+    font-family: var(--font-body), sans-serif;
+    transition: all 0.2s;
+    outline: none;
   }
-  .form-label { @apply font-mono text-xs text-slate-400 uppercase tracking-widest mb-2 block; }
+  .form-input::placeholder {
+    color: #5a6eaa;
+  }
+  .form-input:focus {
+    border-color: #00a8ff;
+    box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.15);
+  }
+
+  .form-label {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    color: #7a90cc;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
 }
 
 @layer utilities {
-  .text-glow { text-shadow: 0 0 20px rgba(0,168,255,0.6), 0 0 40px rgba(0,168,255,0.3); }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 168, 255, 0.6), 0 0 40px rgba(0, 168, 255, 0.3);
+  }
   .glass {
-    background: rgba(15,17,23,0.7);
+    background: rgba(15, 17, 23, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }

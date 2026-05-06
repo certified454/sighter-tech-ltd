@@ -44,10 +44,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${barlow.variable} ${barlowCondensed.variable} ${spaceMono.variable} font-body bg-obsidian-950 text-slate-100 antialiased overflow-x-hidden`}>
+      <body
+        className={`${barlow.variable} ${barlowCondensed.variable} ${spaceMono.variable} font-body bg-obsidian-950 text-slate-100 antialiased overflow-x-hidden`}
+      >
         <div className="relative min-h-screen">
           <div className="fixed inset-0 bg-hero-gradient pointer-events-none" />
           <div className="fixed inset-0 bg-grid-pattern bg-grid-md pointer-events-none opacity-40" />
@@ -57,7 +63,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main>{children}</main>
             <Footer />
           </div>
-          <WhatsAppButton phoneNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2349163301828"} />
+          <WhatsAppButton
+            phoneNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2349163301828"}
+          />
         </div>
       </body>
     </html>
